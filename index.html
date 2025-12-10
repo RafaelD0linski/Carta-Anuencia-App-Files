@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gerador - Carta de Anuência</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Gerador de Carta de Anuência</h1>
+
+      <form id="form">
+        <section class="card">
+          <h2>Dados do Credor (fixo)</h2>
+          <div class="row">
+            <label>Nome:</label>
+            <div>Sergio Roberto Dolinski</div>
+          </div>
+          <div class="row">
+            <label>CPF:</label>
+            <div>793.284.079-15</div>
+          </div>
+          <div class="row">
+            <label>Endereço:</label>
+            <div>Rua Possidio Salomoni, 783</div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Dados do Devedor</h2>
+          <label>Nome do Devedor (obrigatório)</label>
+          <input
+            id="devNome"
+            type="text"
+            placeholder="Nome completo"
+            required
+          />
+
+          <label>CPF do Devedor (obrigatório)</label>
+          <input
+            id="devCpf"
+            type="text"
+            placeholder="000.000.000-00"
+            required
+          />
+        </section>
+
+        <section class="card">
+          <h2>Dados do Título / Protesto</h2>
+          <label>Doc (Título / Protesto) - será o campo "Doc"</label>
+          <input
+            id="titulo_doc"
+            type="text"
+            placeholder="Título/Protesto (ex: TituloProtesto)"
+          />
+
+          <label>Nosso Número</label>
+          <input id="titulo_nosso" type="text" placeholder="Nosso Número" />
+
+          <label>Vencimento</label>
+          <input id="titulo_venc" type="date" />
+
+          <label>Valor (R$)</label>
+          <input id="titulo_valor" type="text" placeholder="0.00" />
+
+          <label>Nome (para tabela)</label>
+          <input
+            id="titulo_nome"
+            type="text"
+            placeholder="Nome / Razão Social"
+          />
+
+          <label>CNPJ / CPF (para tabela)</label>
+          <input id="titulo_cnpj" type="text" placeholder="CNPJ / CPF" />
+        </section>
+
+        <section class="card">
+          <h2>Local / Assinatura</h2>
+          <label>Cidade</label>
+          <input id="cidade" type="text" placeholder="Cidade - UF" />
+
+          <label>Data (se quiser sobrescrever)</label>
+          <input id="data" type="date" />
+
+          <label>Nome que aparecerá abaixo da assinatura (opcional)</label>
+          <input
+            id="assinatura_nome"
+            type="text"
+            placeholder="Nome para assinatura (deixe vazio para campo em branco)"
+          />
+        </section>
+
+        <div class="actions">
+          <button type="button" id="btnGerar">Gerar PDF</button>
+          <button type="button" id="btnWpp">
+            Abrir WhatsApp Web (mensagem)
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <!-- jsPDF (deve ficar antes do app.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Seu JS -->
+    <script src="app.js"></script>
+  </body>
+</html>
